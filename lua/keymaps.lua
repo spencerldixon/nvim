@@ -59,23 +59,23 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle windo
 
 -- telescope
 local builtin = require('telescope.builtin')
-map('n', '<leader>ff', builtin.find_files, {})
-map('n', '<leader>fg', builtin.live_grep, {})
-map('n', '<leader>fb', builtin.buffers, {})
-map('n', '<leader>fh', builtin.help_tags, {})
-map('n', '<leader>.', builtin.current_buffer_fuzzy_find, {})
+map('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles'})
+map('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind [G]rep' })
+map('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
+map('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp tags' })
+map('n', '<leader>.', builtin.current_buffer_fuzzy_find, { desc = '[F]ind in current buffer' })
 
 -- Navigate between buffers with Shift+h or Shift+l and <leader>bd to delete the buffer
-map('n', '<S-h>', '<cmd>bprev<CR>', opts)
-map('n', '<S-l>', '<cmd>bnext<CR>', opts)
-map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
+map('n', '<S-h>', '<cmd>bprev<CR>', { desc = 'Navigate left to previous buffer' })
+map('n', '<S-l>', '<cmd>bnext<CR>', { desc = 'Navigate right to next buffer' })
+map('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[b]uffer [d]elete' })
 
 -- Top and bottom of file with Backspace and Enter
-map('n', '<BS>', 'gg', opts)
-map('n', '<CR>', 'G', opts)
+map('n', '<BS>', 'gg', { desc = 'Navigate to top of file' })
+map('n', '<CR>', 'G', { desc = 'Navigate to bottom of file' })
 
 -- Quick save with <leader>w
-map('n', '<leader>w', '<cmd>w<CR>', opts)
+map('n', '<leader>w', '<cmd>w<CR>', { desc = '[w]rite buffer' })
 
 -- vim: ts=2 sts=2 sw=2 et
 
